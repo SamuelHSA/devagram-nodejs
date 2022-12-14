@@ -49,7 +49,7 @@ const handler = nc()
             console.log(e);
             return res.status(500).json({erro : 'Erro ao cadastrar usuario'});
 
-        }
+        } 
 });
     
 
