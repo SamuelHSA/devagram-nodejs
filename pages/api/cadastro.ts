@@ -52,7 +52,6 @@ const handler = nc()
         } 
 });
     
-
 export const config = {
     api: {
         bodyParser : false
