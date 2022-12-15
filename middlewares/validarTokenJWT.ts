@@ -7,13 +7,11 @@ export const validarTokenJWT = (handler : NextApiHandler) =>
 
     try{
     const {MINHA_CHAVE_JWT} = process.env;
-
     if(!MINHA_CHAVE_JWT) {
         return res.status(500).json({erro : 'ENV chave JWT não informada na execução do projeto'});
     }
 
     // if(!req || req.headers) {
-    //     console.log('Aqui')
     //     return res.status(401).json({erro : 'Não foi possível validar o token de acesso'});
     // }
 
@@ -42,7 +40,6 @@ export const validarTokenJWT = (handler : NextApiHandler) =>
         }catch(e) {
             console.log(e);
         return res.status(401).json({erro : 'Não foi possível validar o token de acesso'});
-
         }
 
     return handler(req, res);
