@@ -5,6 +5,7 @@ import { seguidorModel } from "../../models/SeguidorModel";
 import { UsuarioModel } from "../../models/UsuarioModel";
 import type { respostaPadraoMsg } from '../../types/respostaPadraoMsg';
 
+
 const endpointSeguir = 
     async (req : NextApiRequest, res : NextApiResponse<respostaPadraoMsg>) => {
     try {
@@ -30,6 +31,7 @@ const endpointSeguir =
             if(euJaSigoEsseUsuario && euJaSigoEsseUsuario.length > 0) {
                 // Sinal que eu já sigo esse usuário
                 euJaSigoEsseUsuario.forEach(async(e : any) => await seguidorModel.findByIdAndDelete({_id : e._id}));
+
                 usuarioLogado.seguindo--;
                 await UsuarioModel.findByIdAndUpdate({_id : usuarioLogado._id}, usuarioLogado);
                 usuarioASerSeguido.seguidores--;
