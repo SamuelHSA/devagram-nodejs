@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/react-dom": "18.0.9",
     "cosmicjs": "^4.3.1",
+    "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.3.0",
     "moment": "^2.29.4",
